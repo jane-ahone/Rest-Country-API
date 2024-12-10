@@ -1,0 +1,252 @@
+:root {
+  --Dark-Blue: hsl(209, 23%, 22%);
+  --Very-Dark-Blue: hsl(209, 21%, 20%);
+  /* --Very-Dark-Blue: hsl(200, 15%, 8%); */
+  --Dark-Gray: hsl(0, 0%, 52%);
+  --Very-Light-Gray: hsl(0, 0%, 98%);
+  --White: hsl(0, 0%, 100%);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: inherit;
+}
+
+body {
+  background-color: var(--Very-Dark-Blue);
+  color: var(--White);
+  margin: 0;
+  font-size: 14px;
+  font-family: "Nunito Sans", sans-serif;
+}
+
+body.light-mode {
+  background-color: var(--Very-Light-Gray);
+  color: var(--Light-Gray);
+}
+
+header {
+  background-color: var(--Dark-Blue);
+  padding: 1rem;
+  box-shadow: 0px 0px 6px 0px hsla(212, 22%, 17%, 0.296);
+}
+body.light-mode header {
+  background-color: var(--Light-Blue);
+}
+header,
+.filters {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+header > * {
+  margin: 1rem 2rem;
+}
+
+header h1 {
+  font-size: 1.5rem;
+}
+
+header .right {
+  display: flex;
+  align-items: center;
+  column-gap: 0.5rem;
+}
+
+#moon-icon {
+  width: 16px;
+  height: 16px;
+}
+
+main {
+  margin-top: 3rem;
+  padding: 0 4rem;
+}
+
+.filters div input,
+.filters div select {
+  background-color: var(--Dark-Blue);
+  padding: 1rem 0.5rem;
+  border: none;
+  border-radius: 4px;
+  box-shadow: 0px 0px 6px 0px hsl(209deg 22.56% 17.2);
+  font-weight: 300;
+  color: white;
+  height: 3rem;
+}
+body.light-mode .filters div input,
+body.light-mode .filters div select {
+  background-color: white;
+  box-shadow: -2px 3px 3px 0px hsl(210deg 3.02% 51.93% / 8%);
+  color: hsl(210deg 23% 17%);
+}
+.filters div input::placeholder {
+  font-weight: 300;
+  color: white;
+}
+body.light-mode .filters div input::placeholder {
+  color: hsl(210deg 23% 17%);
+}
+
+.filters div input {
+  min-width: 100%;
+  padding-left: 3rem;
+}
+
+.search-bar {
+  position: relative;
+  width: inherit;
+}
+#search-icon {
+  width: 16px;
+  height: 16px;
+  position: absolute;
+  top: 50%;
+  left: 1.25rem; /* Adjust as needed */
+  transform: translateY(-50%);
+}
+
+.countries-data {
+  margin-top: 4rem;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 6rem;
+}
+
+.flag-div {
+  height: min-content;
+}
+
+.country-flag {
+  aspect-ratio: 2 / 1; /* Ensures square dimensions */
+  width: 100%;
+  object-fit: cover; /* Fits image within the defined aspect ratio */
+  display: block;
+}
+
+.country-card {
+  background-color: var(--Dark-Blue);
+  padding: 1rem;
+  padding-bottom: 2.5rem;
+}
+.info-container {
+  box-shadow: 2px 1px 8px 0px hsla(212, 22%, 17%, 0.103);
+}
+
+.info-container:hover {
+  background-color: rgba(0, 0, 0, 0.082);
+}
+.info-container > * {
+  position: relative;
+  z-index: -3;
+}
+
+body.light-mode .country-card {
+  background-color: var(--Very-Light-Gray);
+}
+.country-card > *:not(.country-name) {
+  margin: 0.75rem 0;
+}
+
+.country-population,
+.country-region,
+.country-capital {
+  font-weight: 300;
+  font-size: 0.85rem;
+}
+
+.country-card span {
+  font-weight: 400;
+}
+
+.pagination-controls {
+  margin-top: 3rem;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.page-btn {
+  background-color: var(--Dark-Blue);
+  border-radius: 4px;
+  padding: 0.8rem;
+  margin-left: 1rem;
+  margin-bottom: 2rem;
+  width: 50px;
+  height: 50px;
+  text-align: center;
+}
+
+.page-btn:hover {
+  background-color: rgba(90, 88, 88, 0.67);
+}
+body.light-mode .page-btn:hover {
+  background-color: rgba(122, 119, 119, 0.453);
+}
+
+body.light-mode .page-btn {
+  background-color: white;
+  background-color: rgb(19 18 18);
+  font-weight: 600;
+  color: white;
+}
+
+.active {
+  background-color: var(--Very-Light-Gray);
+  color: var(--Very-Dark-Blue);
+}
+body.light-mode .active {
+  border: 1px solid var(--Very-Dark-Blue);
+  background-color: var(--Very-Light-Gray);
+  color: var(--Very-Dark-Blue);
+}
+body.light-mode .active:hover {
+  background-color: white;
+  background-color: rgb(19 18 18);
+  font-weight: 600;
+  color: white;
+}
+
+@media (max-width: 600px) {
+  .filters {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
+    width: 100%;
+  }
+}
+@media (max-width: 500px) {
+  body {
+    font-size: 13px;
+  }
+  header > * {
+    margin: 1rem 1rem;
+  }
+  header .right {
+    gap: 1rem;
+  }
+  header h1 {
+    font-size: 1rem;
+  }
+  header svg {
+    width: 20px;
+    display: inline-block;
+  }
+}
+@media (max-width: 425px) {
+  body {
+    font-size: 12px;
+  }
+  header .span {
+    gap: 1rem;
+  }
+  header h1 {
+    font-size: 0.8rem;
+  }
+  header svg {
+    width: 15px;
+  }
+}

@@ -1,0 +1,114 @@
+main {
+  height: 100vh;
+}
+
+.info-container {
+  display: grid;
+  grid-template-columns: 60% 40%;
+  gap: 3rem;
+  align-items: center;
+  box-shadow: none;
+}
+
+.country-name {
+  margin-bottom: 2rem;
+}
+
+.country-flag {
+  aspect-ratio: initial;
+  height: 100%;
+}
+.country-card {
+  background-color: transparent;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  justify-content: space-between;
+  column-gap: 2rem;
+  padding: 0;
+}
+.info-container:hover {
+  background-color: transparent;
+  box-shadow: none;
+}
+
+.country-card > *,
+.country-border {
+  font-size: 1rem;
+}
+
+.country-border {
+  margin-top: 1rem;
+}
+
+span.country-title {
+  font-weight: 600;
+}
+
+.back-btn {
+  background-color: var(--Dark-Blue);
+  border-radius: 8px;
+  border: none;
+  /* box-shadow: 0px 0px 6px 0px hsl(212, 23%, 13%); */
+  font-weight: 400;
+  color: white;
+  padding: 0.8rem 3rem;
+  margin-bottom: 3rem;
+}
+.back-btn:hover {
+  box-shadow: 0px 0px 6px 0px hsl(212, 23%, 13%);
+}
+.border-btn {
+  background-color: var(--Dark-Blue);
+  border-radius: 4px;
+  border: none;
+  /* box-shadow: 0px 0px 6px 0px hsl(212, 23%, 13%); */
+  font-weight: 400;
+  color: white;
+  padding: 0.35rem 1.5rem;
+  margin: 0.5rem;
+}
+.border-btn:hover {
+  box-shadow: 2px 2px 6px 0px hsl(210deg 23% 17% / 13%);
+}
+.page-btn {
+  background-color: var(--Dark-Blue);
+  width: 25px;
+  height: 25px;
+  border-radius: 4px;
+  padding: 0.5rem;
+  margin-left: 1rem;
+}
+
+@media screen and (max-width: 1024px) {
+  body {
+    font-size: 12px;
+  }
+  .country-name {
+    font-size: 1.5rem;
+  }
+  .country-card > * {
+    font-size: 0.75rem;
+  }
+  main {
+    padding: 1.75rem;
+    margin-top: 0;
+  }
+  .info-container {
+    display: initial;
+  }
+  .desc-container {
+    margin-top: 2rem;
+  }
+  .country-card {
+    display: initial;
+  }
+}
+@media screen and (max-width: 425px) {
+  body {
+    font-size: 8px;
+  }
+  .title {
+    font-size: 16px;
+  }
+}

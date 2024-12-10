@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Country Details</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="style-country.css" />
+  </head>
+  <body>
+    <header>
+      <h1 class="title">Where in the world?</h1>
+      <div class="right">
+        <i data-lucide="moon" id="toggle-btn"></i>
+        <span id="toggle-text">Dark Mode</span>
+      </div>
+    </header>
+    <main class="country-details">
+      <a href="./index.html"><button class="back-btn">Back</button></a>
+      <!-- Country details will be inserted here by JavaScript -->
+    </main>
+    <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
+    <script>
+      lucide.createIcons();
+    </script>
+    <script src="./light-mode.js"></script>
+    <script src="country.js"></script>
+  </body>
+</html>
