@@ -20,7 +20,6 @@ if (countryName) {
 }
 
 function displayCountryDetails(country) {
-  console.log(country);
   const countryDetails = document.querySelector(".country-details");
   const newContainer = document.createElement("div");
   newContainer.classList.add("info-container");
@@ -76,7 +75,6 @@ function displayCountryDetails(country) {
   }`; //may need to change to a loop
   currency.classList.add("country-currency");
 
-  console.log(country.languages);
   const languages = document.createElement("p");
   languages.innerHTML = `<span class="country-title">Languages: </span> <span> ${Object.values(
     country.languages

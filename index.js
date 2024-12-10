@@ -81,24 +81,17 @@ const renderPaginatedData = () => {
     return matchesSearch && matchesRegion;
   });
 
-  console.log(searchValue, regionValue);
-  console.log(filteredData);
-
   const paginatedData = filteredData.slice(
     (currentPage - 1) * itemsPerPage,
     currentPage * itemsPerPage
   );
 
-  console.log(paginatedData, currentPage, itemsPerPage);
-
   numberOfPages = Math.ceil(filteredData.length / itemsPerPage);
-  console.log(filteredData);
   renderCountries(paginatedData);
   renderPaginationControls(numberOfPages);
 };
 
 const renderPaginationControls = (numberOfPages) => {
-  console.log(numberOfPages);
   // Clear existing pagination controls
   const existingPagination = document.querySelector(".pagination-controls");
   if (existingPagination) existingPagination.remove();
